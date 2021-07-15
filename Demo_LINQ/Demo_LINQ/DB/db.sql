@@ -68,7 +68,16 @@
 								  ('119', 'JDILLY', 'Office Assistant', '115', 7500 , 'D10'),
 								  ('120', 'TGATES', 'Web Developer', '119', 6000 , 'D20'),
 								  ('121', 'RPERKINS', 'Accountant', '115', 4400 , 'D70'),
-								  ('122', 'DOCONNEL', 'Controller', '120', 3200 , 'D10')
+								  ('122', 'DOCONNEL', 'Controller', '120', 3200 , 'D10'),
+								  ('123', 'Name-001', 'Controller-002', '120', 3200 , 'D10'),
+								  ('124', 'Name-002', 'Controller-004', '120', 3200 , 'D20'),
+								  ('125', 'Name-003', 'Controller-001', '120', 3200 , 'D20'),
+								  ('126', 'Name-004', 'Controller-003', '120', 3200 , 'D10'),
+								  ('127', 'NKOCHHAR', 'Controller-005', '120' , 3200 , 'D80'),
+								  ('128', 'Name-004', 'Controller-005', '120', 3200 , 'D50'),
+								  ('129', 'Name-004', 'Controller-005', '120', 3200 , 'D10'),
+								  ('130', 'Name-004', 'Controller-005', '120', 3200 , 'D30'),
+								  ('131', 'Name-004', 'Controller-005', '120', 3200 , 'D60')
 		GO
 
 		SELECT * FROM Employe
