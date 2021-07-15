@@ -33,16 +33,16 @@
 --- Employe --- (Matricule, Employe_Name, Poste,  ID_Sup, Salaire, Num_Department)  
 	--- CREATE
 		CREATE TABLE Employe(
-							 Matricule VARCHAR(50) NOT NULL,
-							 Name_Employe VARCHAR(50) NOT NULL,
-							 Poste VARCHAR(50) NOT NULL,
-							 ID_Sup VARCHAR(50) NULL,
-							 Salaire MONEY NOT NULL,
-							 Num_Department VARCHAR(50) NOT NULL,
+								 Matricule VARCHAR(50) NOT NULL,
+								 Name_Employe VARCHAR(50) NOT NULL,
+								 Poste VARCHAR(50) NOT NULL,
+								 ID_Sup VARCHAR(50) NULL,
+								 Salaire MONEY NOT NULL,
+								 Num_Department VARCHAR(50) NOT NULL,
 
-							 PRIMARY KEY (Matricule),
-							 FOREIGN KEY (ID_Sup) REFERENCES Employe(Matricule),
-							 FOREIGN KEY (Num_Department) REFERENCES Department(Num_Department)
+								 PRIMARY KEY (Matricule),
+								 FOREIGN KEY (ID_Sup) REFERENCES Employe(Matricule),
+								 FOREIGN KEY (Num_Department) REFERENCES Department(Num_Department)
 							)
 		GO
 

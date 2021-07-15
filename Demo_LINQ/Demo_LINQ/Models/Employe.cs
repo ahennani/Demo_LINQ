@@ -24,5 +24,11 @@ namespace Demo_LINQ.Models
         public virtual Department NumDepartmentNavigation { get; set; }
         public virtual ICollection<Employe> InverseIdSupNavigation { get; set; }
         public virtual ICollection<Participer> Participers { get; set; }
+
+        public override string ToString()
+        {
+            return $"Matricule: {this.Matricule}, NameEmploye: {this.NameEmploye}, Poste: {this.Poste}, " +
+                   $"IdSup: {this.IdSup}, NumDepartment: {this.NumDepartment}";
+        }
     }
 }

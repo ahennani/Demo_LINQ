@@ -17,5 +17,10 @@ namespace Demo_LINQ.Models
         public string Lieu { get; set; }
 
         public virtual ICollection<Employe> Employes { get; set; }
+
+        public override string ToString()
+        {
+            return $"NumDepartment: {this.NumDepartment}, NameDepartment: {this.NameDepartment}, Lieu: {this.Lieu}";
+        }
     }
 }

@@ -12,5 +12,10 @@ namespace Demo_LINQ.Models
 
         public virtual Projet CodeProjetNavigation { get; set; }
         public virtual Employe MatriculeNavigation { get; set; }
+
+        public override string ToString()
+        {
+            return $"Matricule: {this.Matricule}, CodeProjet: {this.CodeProjet}";
+        }
     }
 }

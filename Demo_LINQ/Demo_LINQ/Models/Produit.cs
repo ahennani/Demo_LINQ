@@ -11,5 +11,10 @@ namespace Demo_LINQ.Models
         public string Libelle { get; set; }
         public string Origine { get; set; }
         public string Couleur { get; set; }
+
+        public override string ToString()
+        {
+            return $"CodeProduit: {this.CodeProduit}, Libelle: {this.Libelle}, Origine: {this.Origine}, Couleur: {this.Couleur}";
+        }
     }
 }

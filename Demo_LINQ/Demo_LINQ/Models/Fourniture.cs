@@ -13,5 +13,10 @@ namespace Demo_LINQ.Models
 
         public virtual Produit CodeProduitNavigation { get; set; }
         public virtual Fournisseur NumFournitureNavigation { get; set; }
+
+        public override string ToString()
+        {
+            return $"NumFourniture: {this.NumFourniture}, CodeProduit: {this.CodeProduit}, Quantite: {this.Quantite}";
+        }
     }
 }
