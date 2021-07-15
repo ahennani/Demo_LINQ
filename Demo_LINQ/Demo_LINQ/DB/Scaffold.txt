@@ -1,0 +1,4 @@
+﻿1. Install-Package Microsoft.EntityFrameworkCore.SqlServer
+2. Install-Package Microsoft.EntityFrameworkCore.Tools
+3. 
+Scaffold-DbContext  "Server=.\SQLExpress;Database=Demo_LINQ;Trusted_Connection=True;"  Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context "AppDbContext" -ContextDir Models
