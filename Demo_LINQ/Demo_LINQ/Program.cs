@@ -66,31 +66,77 @@ namespace Demo_LINQ
             /// OrderBy & OrderByDescending & ThenBy & ThenByDescending
             ///////////////
 
-            var employes1 = from emp in context.Employes
-                            orderby emp.Salaire descending
-                            orderby emp.Poste
-                            orderby emp.NumDepartment descending
-                            select emp;
+            //var employes1 = from emp in context.Employes
+            //                orderby emp.Salaire descending
+            //                orderby emp.Poste
+            //                orderby emp.NumDepartment descending
+            //                select emp;
+
+            //Console.WriteLine("##################  Employe 1  ####################");
+            //foreach (var emp in employes1)
+            //{
+            //    Console.WriteLine($"{emp.Salaire.ToString("0.00")}  {emp.Poste.ToString()}");
+            //    Console.WriteLine("---------------------------------------------");
+            //}
+
+            //var employes2 = context.Employes
+            //                        .OrderByDescending(emp => emp.Salaire)
+            //                        .ThenBy(emp => emp.Poste)
+            //                        .ThenByDescending(emp => emp.NumDepartment)
+            //                        .ToList();
+
+            //Console.WriteLine("##################  Employe 2  ####################");
+            //foreach (var emp in employes2)
+            //{
+            //    Console.WriteLine($"{emp.Salaire.ToString()}  {emp.Poste.ToString()}  {emp.NumDepartment.ToString()}");
+            //    Console.WriteLine("---------------------------------------------");
+            //}
+
+
+            ///////////////
+            /// Group By
+            ///////////////
+
+            var employes1 = from emp in context.Employes.ToList()
+                            group emp by emp.NumDepartment;
 
             Console.WriteLine("##################  Employe 1  ####################");
-            foreach (var emp in employes1)
+            foreach (var grp in employes1)
             {
-                Console.WriteLine($"{emp.Salaire.ToString("0.00")}  {emp.Poste.ToString()}");
-                Console.WriteLine("---------------------------------------------");
+                Console.WriteLine($"___________________________");
+                Console.WriteLine($"Grouped By: {grp.Key}");
+                foreach (var emp in grp)
+                {
+                    Console.WriteLine($"\t{emp.Salaire.ToString("0.00")}  {emp.Poste.ToString()}");
+                    Console.WriteLine("\t---------------------------------------------");
+                }
             }
 
             var employes2 = context.Employes
-                                    .OrderByDescending(emp => emp.Salaire)
-                                    .ThenBy(emp => emp.Poste)
-                                    .ThenByDescending(emp => emp.NumDepartment)
-                                    .ToList();
+                                    .ToList()
+                                    .OrderBy(emp =>emp.NumDepartment)
+                                    .GroupBy(emp =>emp.NumDepartment);
 
             Console.WriteLine("##################  Employe 2  ####################");
-            foreach (var emp in employes2)
+            foreach (var grp in employes2)
             {
-                Console.WriteLine($"{emp.Salaire.ToString()}  {emp.Poste.ToString()}  {emp.NumDepartment.ToString()}");
-                Console.WriteLine("---------------------------------------------");
+                Console.WriteLine($"___________________________");
+                Console.WriteLine($"Grouped By: {grp.Key}");
+                foreach (var emp in grp)
+                {
+                    Console.WriteLine($"\t{emp.Salaire.ToString("0.00")}  {emp.Poste.ToString()}");
+                    Console.WriteLine("\t---------------------------------------------");
+                }
             }
+
+
+
+
+
+
+
+
+
 
 
 
